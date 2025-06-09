@@ -1,0 +1,4 @@
+Test encoding_group_method and decode...
+Test check if the interpolate_polynomial goes through
+Test check the ideal permutation
+Test send permutation to sender when?
