@@ -45,7 +45,7 @@ class Sender:
         return sender
     
     def start_protocol(self, host: str = 'localhost', port: int = 65432):
-        a, m = diffie_hellman_key_agreement(self.g, self.p)
+        a, m = diffie_hellman_key_agreement(self.g, self.q, self.p)
         self.a = a
         self.a = format(self.a, '02048b')
         self.m = format(m, '02048b')

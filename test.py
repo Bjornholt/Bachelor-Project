@@ -333,7 +333,7 @@ def test_encode_decode():
     poly = galois.primitive_poly(2, 512)
     GF = galois.GF(2**int(math.log2(p)+1), irreducible_poly=poly)
     for i in range(10):
-        _,m = diffie_hellman_key_agreement(g, p)
+        _,m = diffie_hellman_key_agreement(g, q, p)
         print(f"m: {m}")
         encoded = encode_group_element(m, p, u, GF)
         int_encode = int(encoded, 2)
@@ -469,7 +469,7 @@ def test_with_set_of_2_to_power_16_and_12():
 # This is the time for the eval function 0.16715168952941895
 # Total protocol runtime: 3.87 seconds
 
-# test_with_set_of_2_to_power_9() 
+# test_with_set_of_2_to_power_9()
 # Time for fast_modular_interpolation:  1.2889537811279297
 # This is the time for the eval function 0.6455965042114258
 # Total protocol runtime: 7.81 seconds

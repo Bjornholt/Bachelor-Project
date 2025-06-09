@@ -61,7 +61,7 @@ class Receiver:
                 hashed_set_Y = [0] * len(self.set_Y)
                 for i in range(len(self.set_Y)):
                     while True:
-                        b_i, m_i = diffie_hellman_key_agreement(self.g,self.p)
+                        b_i, m_i = diffie_hellman_key_agreement(self.g, self.q, self.p)
                         m_i_encoded_bitstring = encode_group_element(m_i, self.p, self.u)
                         m_i_perm = permutation_mapping(m_i_encoded_bitstring, self.key, self.iv)
                         if int(m_i_perm,2) < self.p:

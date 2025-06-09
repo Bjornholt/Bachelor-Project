@@ -142,11 +142,11 @@ def inverse_permutation(encrypted_bitstring: str, key: bytes, iv: bytes) -> str:
     decrypted_data_as_bitstring = format(int.from_bytes(decrypted_data, 'big'), '02048b')
     return decrypted_data_as_bitstring
 
-def diffie_hellman_key_agreement(g: int, p: int) -> Tuple[int, int]:
+def diffie_hellman_key_agreement(g: int, q: int, p: int) -> Tuple[int, int]:
     """
     Generate Diffie-Hellman key pair (private_key, public_key)
     """
-    private_key = random.randint(2, p-2)
+    private_key = random.randint(1, q)
     public_key = gmpy2.powmod(mpz(g), mpz(private_key), mpz(p))
     return private_key, public_key
 
